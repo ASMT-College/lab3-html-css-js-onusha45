@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dynamic" onclick=""></div>
+    <div id="hide" onclick="hideTable()">Hide</div>
+    <div id="show" onclick="ShowTable()">Show</div>
+    <div onmouseover="ChangeTableColour()">Change Colour</div>
+    <div onmouseover="ResetTableColour()">Reset Colour</div>
+
+  
+    <script>
+      var myDiv= document.getElementById("dynamic");
+      var myTable=document.createElement('table');
+      var myHeadingRow=document.createElement('tr');
+      var myHeadingColumn1=document.createElement('td');
+      var myHeadingColumn2=document.createElement('td');
+      myHeadingColumn1.innerHTML='Name'
+      myHeadingColumn2.innerHTML='Age'
+      myHeadingRow.appendChild(myHeadingColumn1)
+      myHeadingRow.appendChild(myHeadingColumn2)
+      myTable.appendChild(myHeadingRow)
+      myDiv.appendChild(myTable)
+
+      myHeadingColumn1.addEventListener('click',sayHI)
+      // myHeadingColumn2.addEventListener('dblclick',sayHI)
+      myHeadingColumn2.setAttribute('ondblclick','sayAge()')
+      
+      function sayHI(){
+        alert('namastey')
+      }
+
+      function sayAge(){
+        alert('Age')
+
+      }
+      function sayAge(){
+        alert('Age')
+        
+      }
+      function hideTable(){
+        var myDiv=document.getElementById('dynamic');
+        myDiv.style.display="none";
+      }
+      function ShowTable(){
+        var myDiv=document.getElementById('dynamic');
+        myDiv.style.display="block";
+      }
+      function ChangeTableColour(){
+        var myDiv=document.getElementById('dynamic');
+        myDiv.style.backgroundColor="grey";
+      } 
+      function ResetTableColour(){
+        var myDiv=document.getElementById('dynamic');
+        myDiv.style.backgroundColor="white";
+      }
+// ----------------------12 september Assignment-------------------------//
+//  create dynamic table when table data is provided
+//  name:john
+// age:20
+//  email:abc@hotmail.com
+// name:jeck
+// age:50
+// email:def@hotmail.com
+/*write the methods properties and events of form object */
+    </script>
+</body>
+</html>
